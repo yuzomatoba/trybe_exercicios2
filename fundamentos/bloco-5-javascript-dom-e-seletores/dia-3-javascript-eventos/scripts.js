@@ -80,3 +80,42 @@ function displayHolidays() {
 }
 
 displayHolidays();
+
+// Exercício 4
+
+// Implemente uma função que crie dinamicamente um botão com o nome 'Sexta-feira'. Sua funão deve receber como parâmetro a string 'Sexta-feira'. Adicione a esse botão a ID 'btn-friday'. Adicone a esse botão como filho da tag <div> com classe 'buttons-container'
+
+function createFridayButton(buttonName){
+  let buttonContainer =document.querySelector('.buttons-container');
+  let newButton = document.createElement('button');
+  let newButtonID = 'btn-friday';
+
+  newButton.id = newButtonID;
+  newButton.innerText = buttonName;
+  buttonContainer.appendChild(newButton);
+}
+
+createFridayButton('Sexta-feira');
+
+// Exercício 5
+
+// Implemente uma funçao que modifica o texto exibido nos dias que são sexta-feira. Adicione ao botão 'sexta-feira' um evento de 'click' e modifique o texto a ser exibido nos dias  que são sextas-feiras.
+
+function displayFridays(fridaysArray) {
+  let getFridayButton = document.querySelector('#btn-friday');
+  let fridays = document.getElementsByClassName('friday');
+  let newFridayText = 'SEXTOU o/'
+  getFridayButton.addEventListener('click', function() {
+    for (let index = 0; index < fridays.length; index+=1) {
+      if(fridays[index].innerHTML !== newFridayText) {
+        fridays[index].innerHTML = newFridayText;
+      } else {
+        fridays[index].innerHTML = fridaysArray[index];
+      }
+    }
+  })
+
+}
+
+let decemberFridays = [4, 11, 18, 25];
+displayFridays(decemberFridays);

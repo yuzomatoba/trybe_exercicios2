@@ -11,34 +11,34 @@
 </head>
 <body>
     <h1 class="h1">Concorra à Viagem dos seus Sonhos com a TrybeTrip</h1>
-    <form>
-        <fieldset>
+    <form class="js form">
+        <fieldset class="form-group">
             <label class="form-label" for="fullName">Nome Completo:</label>
-            <input type="text" id="fullName" name="fullName" placeholder="Digite o seu nome completo" minlength="10" required maxlength="40">
+            <input class="form-control" type="text" id="fullName" name="fullName" placeholder="Digite o seu nome completo" minlength="10" required maxlength="40">
             <br>
             <label class="form-label" for="email"></label>
-            <input type="email" class="form-floating" id="emal" name="email" placeholder="Digite o seu email" minlength="10" required maxlength="50">
+            <input  class="form-control" type="email" class="form-floating" id="emal" name="email" placeholder="Digite o seu email" minlength="10" required maxlength="50">
             <br>
             <label  class="form-label" for="destination1">Cidade</label>
-            <input type="radio" class="form-check form-switch"class="form-floating" id="destination1" className="radios" name="destinations" value="Cidade" required>
+            <input type="radio" class="form-check-input"class="form-floating" id="destination1" className="radios" name="destinations" value="Cidade" required>
             <label  class="form-label" for="destination2">Campo</label>
-            <input type="radio" class="form-floating" id="destination2" className="radios" name="destinations" value="Campo" required>
+            <input type="radio" class="form-check-input" id="destination2" className="radios" name="destinations" value="Campo" required>
             <label  class="form-label" for="destination3">Praia</label>
-            <input type="radio" class="form-floating" id="destination3" className="radios" name="destinations" value="Praia" required>
+            <input type="radio" class="form-check-input" id="destination3" className="radios" name="destinations" value="Praia" required>
             <label  class="form-label" for="destination4">Montanhas</label>
-            <input type="radio" class="form-floating" id="destination4" className="radios" name="destinations" value="Montanhas" required>
+            <input type="radio" class="form-check-input" id="destination4" className="radios" name="destinations" value="Montanhas" required>
             <br>
              <label  class="form-label" for="why">Por que você deveria ser a pessoa desenvolvedora escolhida pelo concurso TryTrip?</label>
              <br>
-             <textarea class="form-floating" name="why" id="why" cols="50" rows="10" placeholder="Digite a sua resposta vencedora aqui"></textarea>
+             <textarea class="form-control" name="why" id="why" cols="50" rows="10" placeholder="Digite a sua resposta vencedora aqui"></textarea>
              <label  class="form-label" for="date">Qual a melhor data para realizar a sua viagem?</label>
-             <input type="date" id="date">
+             <input type="date" id="date" class="form-control">
              <br>
              <label class="form-label" for="promo">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe</label>
-             <input type="checkbox"  class="form-check" name="promo" id="promo">
+             <input type="checkbox"  class="form-check-input" name="promo" id="promo">
              <br>
              <label  class="form-label"for="">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros</label>
-             <input type="checkbox" name="agreement" class="form-floating" id="agreement" required>
+             <input type="checkbox" name="agreement" class="form-check-input" id="agreement" required>
         </fieldset>
         <button type="submit"  class="btn btn-success" id="submit-btn" disabled>Participar do Concurso TrybeTrip</button>
         <button type="button" class="btn btn-warning" id="clear-btn">Apagar Informações</button>

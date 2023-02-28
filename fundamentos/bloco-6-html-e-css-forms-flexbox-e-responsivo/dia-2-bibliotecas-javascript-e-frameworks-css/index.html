@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1 class="h1">Concorra à Viagem dos seus Sonhos com a TrybeTrip</h1>
+    <form class="js form">
+        <fieldset class="form-group">
+            <label class="form-label" for="fullName">Nome Completo:</label>
+            <input class="form-control" type="text" id="fullName" name="fullName" placeholder="Digite o seu nome completo" minlength="10" required maxlength="40">
+            <br>
+            <label class="form-label" for="email"></label>
+            <input  class="form-control" type="email" class="form-floating" id="emal" name="email" placeholder="Digite o seu email" minlength="10" required maxlength="50">
+            <br>
+            <label  class="form-label" for="destination1">Cidade</label>
+            <input type="radio" class="form-check-input"class="form-floating" id="destination1" className="radios" name="destinations" value="Cidade" required>
+            <label  class="form-label" for="destination2">Campo</label>
+            <input type="radio" class="form-check-input" id="destination2" className="radios" name="destinations" value="Campo" required>
+            <label  class="form-label" for="destination3">Praia</label>
+            <input type="radio" class="form-check-input" id="destination3" className="radios" name="destinations" value="Praia" required>
+            <label  class="form-label" for="destination4">Montanhas</label>
+            <input type="radio" class="form-check-input" id="destination4" className="radios" name="destinations" value="Montanhas" required>
+            <br>
+             <label  class="form-label" for="why">Por que você deveria ser a pessoa desenvolvedora escolhida pelo concurso TryTrip?</label>
+             <br>
+             <textarea class="form-control" name="why" id="why" cols="50" rows="10" placeholder="Digite a sua resposta vencedora aqui"></textarea>
+             <label  class="form-label" for="date">Qual a melhor data para realizar a sua viagem?</label>
+             <input type="date" id="date" class="form-control">
+             <br>
+             <label class="form-label" for="promo">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe</label>
+             <input type="checkbox"  class="form-check-input" name="promo" id="promo">
+             <br>
+             <label  class="form-label"for="">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros</label>
+             <input type="checkbox" name="agreement" class="form-check-input" id="agreement" required>
+        </fieldset>
+        <button type="submit"  class="btn btn-success" id="submit-btn" disabled>Participar do Concurso TrybeTrip</button>
+        <button type="button" class="btn btn-warning" id="clear-btn">Apagar Informações</button>
+    </form>
+    <script src="./script.js"></script>
+</body>
+</html>
+

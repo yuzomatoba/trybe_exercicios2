@@ -1,0 +1,140 @@
+use('class');
+db.movies.find();
+
+// exercicio 01
+db.movies.find({
+  category: {
+    $all: ["action", "adventure"]
+  }
+}).pretty();
+
+// exercicio 02
+db.movies.find({
+  category: {
+    $all: ["action", "sci-fi"]
+  },
+   imdbRating: { $gt: 7 } 
+}).pretty();
+
+// exercicio 03
+db.movies.find({
+  ratings: {
+    $elemMatch: { $gt: 103 }, 
+  }
+}, {
+  _id: 0,
+  title:1,
+  ratings: 1
+}).pretty();
+
+// exercicio 04
+db.movies.find({
+  ratings: {
+    $elemMatch: { $gte: 100, $lte: 105 }
+  }
+}, {  
+  _id: 0,
+  title: 1,
+  ratings: 1
+}).pretty();
+
+// exercicio 05
+db.movies.find({
+  ratings: {
+    $elemMatch: { $gte: 64, $lte: 105,  $mod: [9, 0] },
+  }
+}, {
+  _id: 0,
+  title: 1,
+  ratings: 1
+}).pretty();
+
+// exercicio 06
+db.movies.find({
+  category: {
+    $all: ["adventure"],
+    ratings: {
+      $elemMatch: { $gte: 103 }
+    }
+  }
+}, {
+  _id: 0,
+  title: 1,
+  ratings: 1,
+  category: 1
+}).pretty();
+
+// exercicio 07
+db.movies.find({
+  category: {
+    $size: 2
+  }
+}, {
+  _id: 0,
+  title: 1
+}).pretty();
+
+// exercicio 08
+db.movies.find({
+  ratings: {
+    $size: 4
+  }
+}, {
+  _id: 0,
+  title: 1
+}).pretty();
+
+// exercicio 09
+db.movies.find({
+  budget: {
+    $mod: [5, 0]
+  },
+  category: {
+    $size: 2
+  }
+}).pretty();
+
+// exercicio 10
+db.movies.find({
+  $or: [{
+    category: {
+      $all: ["sci-fi"],
+    }
+  },
+     { ratings: { $elemMatch: { $gt: 199 }}}]
+}, {
+  _id: 0,
+  title: 1,
+  ratings: 1,
+  category: 1 
+});
+
+// exercicio 11
+db.movies.find({
+  $and: [
+    { ratings: { $size: 4 }},
+    { category: {$in: ["adventure", "family"]}},
+    { imdbRating: { $not: { $lt: 7 }} }
+  ]
+});
+
+// exercicio 12
+db.movies.find({
+  description: {
+  $regex: /^The/
+  }
+}).pretty();
+
+// exercicio 13
+db.movies.find({
+  description: {
+    $regex: /humanity.$/
+  }
+}).pretty();
+
+// exercicio 14
+db.movies.find({
+  $expr: {
+    $lt: ["$budget", "$grossWorldWide"]
+  }
+}).pretty();

@@ -1,0 +1,11 @@
+use ('class');
+
+// db.superheroes.countDocuments({});
+
+// exercicio 01
+// db.superheroes.findOne();
+
+// exercicio 02
+db.superheroes.find({
+  "aspects.height": { $lt: 180 }
+}).pretty();

@@ -1,0 +1,151 @@
+use("class");
+
+// exercicio 01
+db.movies.upddateOne(
+  { title: "Batman" },
+  {
+    $push: { category: "superhero" },
+  },
+);
+
+// exercicio 02
+db.movies.updateOne(
+  { title: "Batman" },
+  { 
+    $push: {
+      $each: { category: ["villain", "comic-based"],
+    },
+    },
+  },
+  );
+
+  // exercicio 03
+  db.movies.updateOne(
+    { title: "Batman" },
+    { $pull: { category: "action" },
+  },
+  );
+
+  // exercicio 04
+  db.movies.updateOne(
+    { title: "Batman" },
+    { $pop: { category: -1 },
+   },
+  );
+
+  // exercicio 05
+  db.movies.updateOne(
+    { title: "Batman" },
+    { $pop: { category: 1 },
+  },
+  );
+
+  // exercicio 06
+  db.movies.updateOne(
+    { title: "Batman "},
+    { $addToSet: { category: "action" },
+  },
+  );
+
+  // exercicio 07
+  db.movies.updateMany({
+    title: {
+    $in: ["Batman", "Home Alone"],
+  },
+},
+{
+    $push: { category: "90's" },
+  },
+  );
+
+  // exercicio 08
+  db.movies.updateOne(
+    { title: "Home Alone" },
+    { 
+      $push: {
+        cast: {
+          $each: [
+            {
+              "actor": "Macaulay Culkin",
+              "character": "Kevin",
+            },
+            { "actor": "Joe Pesci",
+              "character": "Harry",
+          },
+          {
+            "actor": "Daniel Stern",
+          },
+          ],
+        },
+      },
+    },
+  );
+
+  // exercicio 09
+  db.movies.updateOne(
+    { title: "Home Alone",
+      "cast.actor": "Daniel Stern",
+     },
+    { $set: {
+      "cast.$.character": "Marv"
+    },
+  },
+  );
+
+  // exercicio 10
+  db.movies.updateOne(
+    { title: "Batman" },
+    { $push: {
+      cast: {
+        $each: [
+      { "character": "Batman" },
+      { "character": "Alfred" },
+      { "character": "Coringa" }, 
+        ],
+    },
+  },
+},
+  );
+
+  // exercicio 11
+  db.movies.updateOne(
+    { title: "Batmana",
+     "cast.character": "Batmana" },
+     {
+      $push: { "cast.$.actor": "Christian Bale" },
+    },
+  );
+
+  db.movies.updateOne(
+    { title: "Batman",
+      "cast.character": "Alfred",
+  },
+  {
+    $push: { "cast.$.actor": "Michael Cane" },
+  },
+  );
+
+  db.movies.uptadeOne(
+    { title: "Batman",
+      "cast.character": "Coringa",
+  },
+  {
+    $push: { "cast.$.actor": "Heath Ledger" },
+  },
+  );
+
+  // exercicio 12
+  db.movies.updateOne(
+   { title: "Batman",
+     "cast.character": "Batman"
+  },
+  {
+    $push: { 
+      "cast.$.actor": { $each: [
+        "Michael Keaton", "Val Kilmer", "George Clooney"
+      ],
+      $sort: 1,
+    },
+    },
+  },
+  );
